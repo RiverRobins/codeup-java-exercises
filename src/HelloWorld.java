@@ -34,6 +34,7 @@ public class HelloWorld {
 
         Byte bigByteOfBorg = 127;
         bigByteOfBorg++;
+        System.out.println(bigByteOfBorg);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -41,7 +42,6 @@ public class HelloWorld {
         String userInput = scanner.next();
 
         System.out.println("You entered: --> \"" + userInput + "\" <--");
-
 
     }
 }
