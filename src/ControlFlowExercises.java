@@ -1,3 +1,4 @@
+import java.lang.reflect.Method;
 import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
@@ -58,10 +59,57 @@ public class ControlFlowExercises {
             }
         }
 
-        System.out.println("Enter a Number to see squares");
-        num = scanner.nextInt();
-        scanner.nextLine();
+        String prompt;
+        do {
 
-        System.out.println(num);
+            System.out.println("Enter a Number to see squares");
+            num = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("You chose the number " + num);
+
+            String output = "number  |  squared  |  cubed \n";
+
+            for (int i = 0; i <= num; i++) {
+                String template = "%s  |  %s  |  %s \n";
+                output += (String.format(template, i, i * i, i * i * i));
+            }
+            System.out.print(output);
+            System.out.println("You would like to continue? Enter yes or no");
+            prompt = scanner.nextLine();
+        } while (!prompt.equalsIgnoreCase("yes"));
+
+        System.out.println("Enter a numeric grade");
+        byte grade = Byte.parseByte(scanner.nextLine());
+
+        if (grade > 98){
+            System.out.println("A+");
+        }
+        else if(grade > 93){
+            System.out.println("A");
+        }
+        else if (grade > 90) {
+            System.out.println("A-");
+        }
+        else if (grade > 88) {
+            System.out.println("B+");
+        }
+        else if (grade > 83) {
+            System.out.println("B");
+        }
+        else if (grade > 80){
+            System.out.println("B-");
+        }
+        else if (grade > 78){
+            System.out.println("C+");
+        }
+        else if (grade > 74){
+            System.out.println("C");
+        }
+        else if (grade > 70){
+            System.out.println("C-");
+        }
+        else {
+            System.out.println("F");
+        }
     }
 }
