@@ -45,6 +45,6 @@ public class ControlFlowExercises {
         num = scanner.nextInt();
         scanner.nextLine();
 
-        
+        System.out.println(num);
     }
 }
