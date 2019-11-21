@@ -1,6 +1,23 @@
 import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
+        //Lecture refactor
+
+//        boolean outOfPizzaRolls = false;
+//        boolean outOfPepsi = true;
+//
+//        if (!outOfPizzaRolls && !outOfPepsi) {
+//            System.out.println("Night ruined");
+//        }
+//        else if (outOfPepsi ^ outOfPizzaRolls) {
+//            System.out.println("Night meh");
+//        }
+//        else {
+//            System.out.println("Night good");
+//        }
+
+        //Actual Exercises
+
         Scanner scanner = new Scanner(System.in);
 
         scanner.useDelimiter("\n");
