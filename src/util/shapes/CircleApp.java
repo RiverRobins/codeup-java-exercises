@@ -32,7 +32,7 @@ public class CircleApp {
 
             keepGoing = userIn.yesNo();
             if (!keepGoing){
-//                System.out.println("Number of circles made: " + newCircle.circles);
+                System.out.println("Number of circles made: " + newCircle.circles);
             }
         } while (keepGoing);
     }
