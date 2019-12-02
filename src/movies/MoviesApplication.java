@@ -6,10 +6,9 @@ import util.Input;
 public class MoviesApplication {
     public static void main(String[] args){
         boolean cont = true;
+        MoviesArray.Movie[] movies = MoviesArray.findAll();
         while (cont){
             Input input = new Input();
-
-            MoviesArray.Movie[] movies = MoviesArray.findAll();
 
             System.out.print("What would you like?\n" +
                     "0 - Exit\n" +
@@ -127,6 +126,18 @@ public class MoviesApplication {
                         if (found == false){
                             System.out.println("No results found");
                         }
+                        break;
+                    }
+                    case 5: {
+                        System.out.println("Enter the title and genre of the movie");
+                        System.out.print("Enter Title: ");
+                        String nmt = input.getString();
+                        System.out.println("");
+                        System.out.print("Enter Genre: ");
+                        String nmg = input.getString();
+                        System.out.println("");
+                        movies = MoviesArray.Movie.addMovie(movies, new MoviesArray.Movie(nmt, nmg));
+                        System.out.printf("Added %s to the %s genre\n", nmt, nmg);
                         break;
                     }
                     default: {

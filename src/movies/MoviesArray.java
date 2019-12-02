@@ -8,6 +8,14 @@ public class MoviesArray {
             title = name;
             genre = gen;
         }
+        public static Movie[] addMovie(Movie[] arr, Movie newP){
+            Movie[] temp = new Movie[arr.length + 1];
+            for (int i = 0; i < arr.length; i++) {
+                temp[i] = arr[i];
+            }
+            temp[temp.length - 1] = newP;
+            return temp;
+        }
     }
     public static Movie[] findAll() {
         return new Movie[]{
