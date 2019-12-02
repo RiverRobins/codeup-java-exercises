@@ -41,6 +41,48 @@ public class ArraysExercises {
         return Integer.parseInt ("" + Math.round(min + (Math.random() + 1) * (max - min) - max) );
     }
 
+    public static class movieArray{
+        private static String[] animated = {"Flashpoint Paradox", "Clone Wars", "Batman: Hush"};
+        private static String[] drama = {"The Notebook", "Joker", "The Revenant"};
+        private static String[] horror = {"IT", "Scream", "SAW"};
+        private static String[] scifi = {"Star Wars: Empire Strikes Back", "Lord of the Rings: Return of the King", "Space Balls"};
+
+        public static void all(){
+            for (String i : movieArray.animated){
+                System.out.println(i);
+            }
+            for (String i : movieArray.drama){
+                System.out.println(i);
+            }
+            for (String i : movieArray.horror){
+                System.out.println(i);
+            }
+            for (String i : movieArray.scifi){
+                System.out.println(i);
+            }
+        }
+        public static void printAnimated(){
+            for (String i : movieArray.animated){
+                System.out.println(i);
+            }
+        }
+        public static void printDrama(){
+            for (String i : movieArray.drama){
+                System.out.println(i);
+            }
+        }
+        public static void printHorror(){
+            for (String i : movieArray.horror){
+                System.out.println(i);
+            }
+        }
+        public static void printSciFi(){
+            for (String i : movieArray.scifi){
+                System.out.println(i);
+            }
+        }
+    }
+
     public static void menuMain(){
         System.out.print("What would you like to do?\n" +
                 "0 - Exit\n" +
@@ -54,8 +96,7 @@ public class ArraysExercises {
                 "2 - Animated\n" +
                 "3 - Drama\n" +
                 "4 - Horror\n" +
-                "5 - Sci-Fi");
-
+                "5 - Sci-Fi/Fantasy");
     }
 
     public static void main(String[] args){
@@ -76,19 +117,47 @@ public class ArraysExercises {
 
         Input input = new Input();
 
-        while (true){
+        boolean cont = true;
+
+        while (cont){
             menuMain();
             int n = input.getInt();
             switch (n){
                 case 0:{
+                    cont = false;
                     break;
                 }
                 case 1: {
-                    //print all
+                    movieArray.all();
+                    break;
                 }
                 case 2: {
                     menuGenre();
-
+                    switch (input.getInt()){
+                        case 0: {
+                            cont = false;
+                        }
+                        case 1: {
+                            break;
+                        }
+                        case 2:{
+                            movieArray.printAnimated();
+                            break;
+                        }
+                        case 3:{
+                            movieArray.printDrama();
+                            break;
+                        }
+                        case 4:{
+                            movieArray.printHorror();
+                            break;
+                        }
+                        case 5:{
+                            movieArray.printSciFi();
+                            break;
+                        }
+                    }
+                    break;
                 }
             }
         }
