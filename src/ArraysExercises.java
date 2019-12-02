@@ -115,51 +115,54 @@ public class ArraysExercises {
 
         System.out.println("Your server name is: " + name.first + "-" + name.last);
 
+
         Input input = new Input();
 
-        boolean cont = true;
+//        boolean cont = true;
+//
+//        while (cont){
+//            menuMain();
+//            int n = input.getInt();
+//            switch (n){
+//                case 0
+//                :{
+//                    cont = false;
+//                    break;
+//                }
+//                case 1: {
+//                    movieArray.all();
+//                    break;
+//                }
+//                case 2: {
+//                    menuGenre();
+//                    switch (input.getInt()){
+//                        case 0: {
+//                            cont = false;
+//                        }
+//                        case 1: {
+//                            break;
+//                        }
+//                        case 2:{
+//                            movieArray.printAnimated();
+//                            break;
+//                        }
+//                        case 3:{
+//                            movieArray.printDrama();
+//                            break;
+//                        }
+//                        case 4:{
+//                            movieArray.printHorror();
+//                            break;
+//                        }
+//                        case 5:{
+//                            movieArray.printSciFi();
+//                            break;
+//                        }
+//                    }
+//                    break;
+//                }
+//            }
+//        }
 
-        while (cont){
-            menuMain();
-            int n = input.getInt();
-            switch (n){
-                case 0:{
-                    cont = false;
-                    break;
-                }
-                case 1: {
-                    movieArray.all();
-                    break;
-                }
-                case 2: {
-                    menuGenre();
-                    switch (input.getInt()){
-                        case 0: {
-                            cont = false;
-                        }
-                        case 1: {
-                            break;
-                        }
-                        case 2:{
-                            movieArray.printAnimated();
-                            break;
-                        }
-                        case 3:{
-                            movieArray.printDrama();
-                            break;
-                        }
-                        case 4:{
-                            movieArray.printHorror();
-                            break;
-                        }
-                        case 5:{
-                            movieArray.printSciFi();
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
-        }
     }
 }
