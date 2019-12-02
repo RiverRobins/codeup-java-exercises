@@ -15,7 +15,8 @@ public class MoviesApplication {
                     "1 - Show all movies\n" +
                     "2 - Show by genre\n" +
                     "3 - Search by genre\n" +
-                    "4 - Search by title\n");
+                    "4 - Search by title\n" +
+                    "5 - Add a movie");
             try {
                 switch (input.getInt()) {
                     case 0: {
