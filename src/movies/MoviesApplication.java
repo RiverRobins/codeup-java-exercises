@@ -1,22 +1,29 @@
 package movies;
-
-
 import util.Input;
 
 public class MoviesApplication {
+    public static boolean search(int[] array, int forItem){
+        boolean turn = false;
+        for (int item : array){
+            if (item == forItem){
+                turn = true;
+            }
+        }
+        return turn;
+    }
+
     public static void main(String[] args){
         boolean cont = true;
         MoviesArray.Movie[] movies = MoviesArray.findAll();
         while (cont){
             Input input = new Input();
-
-            System.out.print("What would you like?\n" +
+            System.out.print("What would you like to do? Enter a number\n" +
                     "0 - Exit\n" +
                     "1 - Show all movies\n" +
                     "2 - Show by genre\n" +
                     "3 - Search by genre\n" +
                     "4 - Search by title\n" +
-                    "5 - Add a movie");
+                    "5 - Add a movie\n");
             try {
                 switch (input.getInt()) {
                     case 0: {
@@ -30,16 +37,16 @@ public class MoviesApplication {
                         break;
                     }
                     case 2: {
-                        System.out.print("Select an option:\n" +
-                                "Options:\n" +
+                        System.out.print("\nEnter a number:\n" +
+                                "\nOptions:\n" +
                                 "0 - Exit\n" +
                                 "1 - Back to main\n" +
-                                "Movie Genres:\n" +
-                                "2: Animated\n" +
-                                "3: Horror\n" +
-                                "4: Drama\n" +
-                                "5: Sci-Fi\n" +
-                                "6: Musical\n");
+                                "\nMovie Genres:\n" +
+                                "2 - Animated\n" +
+                                "3 - Horror\n" +
+                                "4 - Drama\n" +
+                                "5 - Sci-Fi\n" +
+                                "6 - Musical\n");
                         try {
                             switch (input.getInt()) {
                                 case 0: {
@@ -100,11 +107,11 @@ public class MoviesApplication {
                         break;
                     }
                     case 3: {
-                        System.out.print("Search by genre; enter a genre:\n");
+                        System.out.print("Enter a genre:\n");
                         String search = input.getString();
                         boolean found = false;
                         for (MoviesArray.Movie i : movies) {
-                            if (i.genre.equalsIgnoreCase(search)) {
+                            if (i.genre.contains(search) || i.genre.equalsIgnoreCase(search)) {
                                 System.out.println(i.title);
                                 found = true;
                             }
@@ -119,7 +126,7 @@ public class MoviesApplication {
                         String search = input.getString();
                         boolean found = false;
                         for (MoviesArray.Movie i : movies) {
-                            if (i.title.equalsIgnoreCase(search)) {
+                            if (i.title.contains(search) || i.title.equalsIgnoreCase(search)) {
                                 System.out.println(i.title + ", " + i.genre);
                                 found = true;
                             }
@@ -131,15 +138,25 @@ public class MoviesApplication {
                     }
                     case 5: {
                         System.out.println("Enter the title and genre of the movie");
-                        System.out.print("Enter Title: ");
+                        System.out.print("Enter Title: \n");
                         String nmt = input.getString();
-                        System.out.println("");
-                        System.out.print("Enter Genre: ");
+                        System.out.print("Enter Genre: \n");
                         String nmg = input.getString();
-                        System.out.println("");
                         movies = MoviesArray.Movie.addMovie(movies, new MoviesArray.Movie(nmt, nmg));
                         System.out.printf("Added %s to the %s genre\n", nmt, nmg);
                         break;
+                    }
+                    case 6:{
+                        //remove
+                    }
+                    case 7:{
+                        int[] moviesUsed = new int[movies.length];
+                        MoviesArray.Movie[] newArr = new MoviesArray.Movie[movies.length];
+                        for (int i = 0; i < movies.length; i++){
+                            if (search(moviesUsed, i)){
+
+                            }
+                        }
                     }
                     default: {
                         System.out.println("unknown command");
