@@ -29,9 +29,15 @@ public class Input {
         return in;
     }
     public int getInt(){
-        int in;
-        in = Integer.parseInt(this.scanner.nextLine());
-        return in;
+        try {
+            int in;
+            in = Integer.parseInt(this.scanner.nextLine());
+            return in;
+        } catch (Exception e){
+            System.out.println("Enter a --NUMBER--");
+            getInt();
+        }
+        return 0;
     }
 
     public double getDouble(double min, double max){
@@ -43,9 +49,15 @@ public class Input {
         } while (!( in > min & in < max));
         return in;
     }
+    @SuppressWarnings("primitive")
     public double getDouble(){
-        Double in;
-        in = Double.parseDouble(this.scanner.nextLine());
+        Double in = 0.0;
+        try {
+            in = Double.parseDouble(this.scanner.nextLine());
+        } catch (Exception e){
+            System.out.println("Enter a --NUMBER--");
+            getDouble();
+        }
         return in;
     }
 }

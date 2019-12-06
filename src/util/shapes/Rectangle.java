@@ -17,6 +17,8 @@ public class Rectangle extends Quadrilateral implements Measurable{
         super(len, wid);
     }
 
+
+
 //    protected double len;
 //    protected double wid;
 //
